@@ -13,10 +13,9 @@ const ImageSwiper = () => {
   return (
     <div className="w-full ">
       <Swiper
-        modules={[Pagination, Autoplay]}
+        modules={[ Autoplay]}
         spaceBetween={20}
         slidesPerView={1}
-        pagination={{ clickable: true }}
         autoplay={{ delay: 3000 }}
         loop={true}
         className=""

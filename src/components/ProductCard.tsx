@@ -1,10 +1,15 @@
 import React from "react";
 import Image from "next/image";
-import { StaticImageData } from 'next/image'
-import { productratingPaw} from '@/assets/Svgicons'
+import { StaticImageData } from "next/image";
+import {
+  productratingPaw,
+  RuppeeIcon,
+  fadedRupeeIcon,
+  ProductheartIcon,
+} from "@/assets/Svgicons";
 
 interface ProductCardProps {
-  image: string | StaticImageData
+  image: string | StaticImageData;
   title: string;
   price: string;
   oldPrice?: string;
@@ -21,16 +26,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
   className,
 }) => {
   return (
-    <div
-      className={`${className}`}
-    >
+    <div className={`${className}`}>
       {/* Product Image */}
       <div className="product-image-container">
-        <Image
-          src={image}
-          alt={title}
-          className="product-image"
-        />
+        <span className="product-heart">{ProductheartIcon}</span>
+        <Image src={image} alt={title} className="product-image" />
       </div>
 
       {/* Product Info */}
@@ -39,20 +39,31 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <div className="product-rating-container">
             <div className="product-rating">
               <span>{productratingPaw}</span>
-            <span>{rating.toFixed(1)}</span>
+              <span>{rating.toFixed(1)}</span>
             </div>
           </div>
         )}
         <div className="product-title">{title}</div>
         <div className="product-price">
-          <span className="new-price">₹{price}</span>
+          <span className="new-price">
+            <span>{RuppeeIcon}</span>
+            <span>{price}</span>
+          </span>
           {oldPrice && (
-            <del className="old-price">₹{oldPrice}</del>
+            <div className="relative inline-block">
+              {/* Line above */}
+              <span className="absolute top-1/2 left-0 w-full h-[2px] bg-gray-400"></span>
+
+              {/* Old Price with Icon */}
+              <div className="flex items-center gap-1 relative text-gray-500">
+                <span>{fadedRupeeIcon}</span>
+                <span>{oldPrice}</span>
+              </div>
+            </div>
           )}
         </div>
-
-         
       </div>
+      <button className="addtocartbtn">Add to Cart</button>
     </div>
   );
 };

@@ -5,24 +5,29 @@ interface SectionTitleCtaProps {
   title: string;
   cta?: string;
   href?: string;
+  className?: string;        
+  titleClassName?: string;  
+  ctaClassName?: string;
 }
 
 const SectionTitleCta: React.FC<SectionTitleCtaProps> = ({
   title,
   cta,
   href,
+  className = "",
+  titleClassName = "",
+  ctaClassName = "",
 }) => {
   return (
-    <div className="title-cta">
-      <h3 className="title">{title}</h3>
+    <div className={`${className}`}>
+      <h3 className={`${titleClassName}`}>{title}</h3>
       {cta && href && (
-        <Link className="cta" href={href}>
+        <Link className={`${ctaClassName}`} href={href}>
           {cta}
         </Link>
       )}
     </div>
   );
 };
-
 
 export default SectionTitleCta;

@@ -27,37 +27,37 @@
 Commom Utilities
 ----------------------- */
 body {
-  @apply  [font-family:var(--font-family)] m-0 p-0 box-border;
+  @apply [font-family:var(--font-family)] m-0 p-0 box-border;
 }
 .container {
-  @apply max-w-[1400px] mx-auto px-4 ;
+  @apply max-w-[1400px] mx-auto px-4;
 }
-.title-cta{
-   @apply flex items-center justify-between mb-5
+.title-cta {
+  @apply flex items-center justify-between mb-5;
 }
-.title-cta .title{
-    @apply text-[28px] font-semibold
+.title-cta .title {
+  @apply text-[28px] font-semibold;
 }
-.title-cta .cta{
-    @apply py-2.5 px-5 [background:var(--gradientColor)] rounded-full text-white
+.title-cta .cta {
+  @apply py-2.5 px-5 [background:var(--gradientColor)] rounded-full text-white;
 }
 header .top-bar {
   @apply py-2 [background:var(--colorSecondary)];
 }
-header .top-bar .topbar-inner{
-    @apply flex items-center gap-3 justify-center
+header .top-bar .topbar-inner {
+  @apply flex items-center gap-3 justify-center;
 }
 header .top-bar p {
   @apply text-center text-white text-sm font-medium;
 }
-header .top-bar .close-icon{
-    @apply h-[23px] w-[23px] bg-[#6D4685] flex items-center justify-center rounded-full
+header .top-bar .close-icon {
+  @apply h-[23px] w-[23px] bg-[#6D4685] flex items-center justify-center rounded-full;
 }
-header .mid-bar{
-    @apply py-5
+header .mid-bar {
+  @apply py-5;
 }
-header .mid-bar .midbar-inner{
-    @apply flex justify-between items-center
+header .mid-bar .midbar-inner {
+  @apply flex justify-between items-center;
 }
 header .mid-bar .inputContainer {
   @apply border border-[#ea5b5b] flex items-center p-[5px] pl-5 min-w-[620px] rounded-full justify-between [background-color:var(--greyColor)];
@@ -68,17 +68,17 @@ header .mid-bar .inputContainer .Search-btn {
 header .mid-bar input {
   @apply placeholder:text-sm w-full border-0 outline-0 placeholder:text-black;
 }
-header .header-options{
-    @apply flex items-center gap-5
+header .header-options {
+  @apply flex items-center gap-5;
 }
 header .header-options .menus {
   @apply flex items-center gap-3;
 }
-header .header-options .menus .menu-name{
-    @apply flex items-center gap-3 font-bold
+header .header-options .menus .menu-name {
+  @apply flex items-center gap-3 font-bold;
 }
-header .header-options .menus .menu-name span{
-    @apply font-semibold;
+header .header-options .menus .menu-name span {
+  @apply font-semibold;
 }
 .header-options .icon-bg {
   @apply [background:var(--lightOrangeColor)] rounded-full h-[30px] w-[30px] flex items-center justify-center;
@@ -87,69 +87,73 @@ header .header-options .cart-indicator {
   @apply [background:var(--gradientColor)] text-xs text-white absolute h-4 w-4 text-center rounded-full top-[-5px] right-[-5px];
 }
 
-header .navbar{
-    @apply pb-[22px]
+header .navbar {
+  @apply pb-[22px];
 }
-header .navbar .nav-menu{
-    @apply flex items-center justify-center gap-[40px]
+header .navbar .nav-menu {
+  @apply flex items-center justify-center gap-[40px];
 }
-header .navbar .nav-menu .menu-item{
-    @apply flex items-center gap-1.5 hover:text-[#EA5B5B]
+header .navbar .nav-menu .menu-item {
+  @apply flex items-center gap-1.5 hover:text-[#EA5B5B];
 }
-header .navbar .nav-menu .menu-item span{
-    @apply font-bold text-[#471267] 
-}
-
-.features{
-    @apply py-6 bg-[linear-gradient(90deg,rgba(255,255,255,0.1)_0%,rgba(234,91,91,0.1)_50%,rgba(255,255,255,0.1)_100%)]
-}
-.features .features-inner{
-    @apply flex justify-between items-center
-}
-.features .features-inner .feature-item{
-    @apply flex gap-[15px] max-w-[293px] items-center
-}
-.features .features-inner .feature-text .feature-name{
-    @apply text-lg font-semibold
-}
-.features .features-inner .feature-text .feature-description{
-    @apply text-[#2F2D30]
+header .navbar .nav-menu .menu-item span {
+  @apply font-bold text-[#471267];
 }
 
-
-.popular-products{
-    @apply py-10
+.features {
+  @apply py-6 bg-[linear-gradient(90deg,rgba(255,255,255,0.1)_0%,rgba(234,91,91,0.1)_50%,rgba(255,255,255,0.1)_100%)];
+}
+.features .features-inner {
+  @apply flex justify-between items-center;
+}
+.features .features-inner .feature-item {
+  @apply flex gap-[15px] max-w-[293px] items-center;
+}
+.features .features-inner .feature-text .feature-name {
+  @apply text-lg font-semibold;
+}
+.features .features-inner .feature-text .feature-description {
+  @apply text-[#2F2D30];
 }
 
+.popular-products {
+  @apply py-10;
+}
 
+.product-card {
+  @apply [background-color:var(--greyColor)] rounded-2xl p-2.5 cursor-pointer
+}
+.product-card .product-image-container {
+  @apply w-full relative
+}
+.product-card .product-image-container .product-heart {
+  @apply absolute top-3 right-3
+}
+.product-card .product-image-container .product-image {
+  @apply object-cover rounded-xl h-[255px]
+}
+.product-info {
+  @apply mt-[15px];
+}
+.product-info .product-title {
+  @apply text-sm;
+}
+.product-info .product-price {
+  @apply flex items-center gap-2 mt-[5px];
+}
+.product-info .product-price .new-price {
+  @apply font-semibold [color:var(--colorPrimary)] flex items-center gap-1;
 
-.product-card{
-    @apply  [background-color:var(--greyColor)] max-w-[20%] rounded-2xl shadow-md hover:shadow-lg transition p-2.5 cursor-pointer 
 }
-.product-card .product-image-container{
-    @apply w-full
+.product-info .product-price .old-price {
+  @apply text-sm text-[#696969] flex items-center gap-1 line-through;
 }
-.product-card .product-image-container .product-image{
-    @apply object-cover rounded-xl
+.product-card .product-rating-container {
+  @apply inline-block;
 }
-.product-info{
-    @apply mt-3
+.product-card .product-rating {
+  @apply text-white text-sm flex items-center gap-1 [background:var(--colorPrimary)] px-1.5 py-0.5 rounded-md mb-2.5;
 }
-.product-info .product-title{
-    @apply text-sm
-}
-.product-info .product-price{
- @apply   flex items-center gap-2 mt-1
-}
-.product-info .product-price .new-price{
-    @apply font-semibold [color:var(--colorPrimary)]
-}
-.product-info .product-price .old-price{
-    @apply text-sm text-[#696969]
-}
-.product-card  .product-rating-container{
-    @apply inline-block
-}
-.product-card .product-rating{
-   @apply mt-2 text-white text-sm flex items-center gap-1 [background:var(--colorPrimary)] px-1.5 py-0.5 rounded-md mb-2.5
+.addtocartbtn{
+    @apply w-full py-2  [color:var(--colorPrimary)] rounded-full bg-white border border-[#EA5B5B] mt-2.5 font-semibold;
 }

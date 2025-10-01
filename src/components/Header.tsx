@@ -55,7 +55,7 @@ function Header() {
                     <span>24/7 Help</span>
                     <span>{headerChevron}</span>
                   </div>
-                </a>
+                </a>        
               </li>
 
               <li id="profile">
