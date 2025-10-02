@@ -55,7 +55,7 @@ function Header() {
                     <span>24/7 Help</span>
                     <span>{headerChevron}</span>
                   </div>
-                </a>        
+                </a>
               </li>
 
               <li id="profile">
@@ -67,12 +67,15 @@ function Header() {
                 </a>
               </li>
 
-              <li id="cart">
-                <a href="" className="menus">
-                   <div className="icon-bg">{headerCartIcon}</div>
-                <div className="menu-name">
-                  <span>Cart</span>
-                </div>
+              <li>
+                <a href="" className="menus" id="cart">
+                  <div className="icon-bg">
+                    <div className="cart-indicator">2</div>
+                    {headerCartIcon}
+                  </div>
+                  <div className="menu-name">
+                    <span>Cart</span>
+                  </div>
                 </a>
               </li>
             </ul>
