@@ -6,7 +6,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { sliderleftArrow, sliderrightArrow } from "@/assets/Svgicons";
-import ProductCard from "../ProductCard";
+import ProductCard from "../common/ProductCard";
 import { StaticImageData } from "next/image";
 
 interface Product {

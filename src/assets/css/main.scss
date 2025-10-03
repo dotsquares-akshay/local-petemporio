@@ -1,8 +1,9 @@
 .container {
-  @apply max-w-[1400px] mx-auto px-4;
+  @apply max-w-[1432px] mx-auto px-4;
 }
 .title-cta {
   @apply flex items-center justify-between mb-5;
+
   .title {
     @apply text-[28px] font-semibold;
   }
@@ -15,46 +16,86 @@
   .cta-white {
     @apply py-2.5 px-5 bg-white rounded-full text-[var(--colorPrimary)] border border-[var(--colorPrimary)];
   }
+  &.center {
+    @apply justify-center gap-5;
+  }
+}
+.Primary-btn {
+  @apply px-5 py-2.5 mt-3.5 rounded-full text-white [background:var(--colorPrimary)] inline-block;
+}
+.stroke-btn{
+  @apply py-2.5  rounded-full text-[var(--colorPrimary)] border border-[var(--colorPrimary)] bg-white inline-block px-5 font-semibold text-center ;
+}
+.title-cta-col {
+  @apply flex flex-col gap-2.5 w-[20%];
+  .title {
+    @apply text-[28px] font-semibold;
+  }
+  .subtitle {
+    @apply text-[#424242] text-lg;
+  }
+  .cta {
+    @apply py-2.5 px-5 w-fit [background:var(--gradientColor)] rounded-full text-white inline-block;
+  }
 }
 .product-card {
-    @apply [background-color:var(--greyColor)] rounded-2xl p-2.5 cursor-pointer;
-    .product-image-container {
-      @apply w-full relative;
-      .product-heart {
-        @apply absolute top-3 right-3;
-      }
-      .product-image {
-        @apply object-cover rounded-xl h-full max-h-[255px];
-      }
+  @apply [background-color:var(--greyColor)] rounded-2xl p-2.5 cursor-pointer;
+  .product-image-container {
+    @apply w-full relative;
+    .product-heart {
+      @apply absolute top-3 right-3;
     }
-    .product-rating-container {
-      @apply inline-block;
-      .product-rating {
-        @apply text-white text-sm flex items-center gap-1 [background:var(--colorPrimary)] px-1.5 py-0.5 rounded-md mb-2.5;
-      }
-    }
-    .product-info {
-      @apply mt-[15px];
-      .product-title {
-        @apply text-sm;
-      }
-      .product-price {
-        @apply flex items-center gap-2 mt-[5px];
-        .new-price {
-          @apply font-semibold [color:var(--colorPrimary)] flex items-center gap-1;
-        }
-        .old-price {
-          @apply text-sm text-[#696969] flex items-center gap-1 line-through;
-        }
-      }
-    }
-    .addtocartbtn {
-      @apply w-full py-2  [color:var(--colorPrimary)] rounded-full bg-white border border-[#EA5B5B] mt-2.5 font-semibold;
+    .product-image {
+      @apply object-cover rounded-xl h-full max-h-[255px];
     }
   }
+  .product-rating-container {
+    @apply inline-block;
+    .product-rating {
+      @apply text-white text-sm flex items-center gap-1 [background:var(--colorPrimary)] px-1.5 py-0.5 rounded-md mb-2.5;
+    }
+  }
+  .product-info {
+    @apply mt-[15px];
+    .product-title {
+      @apply text-sm;
+    }
+    .product-price {
+      @apply flex items-center gap-2 mt-[5px];
+      .new-price {
+        @apply font-semibold [color:var(--colorPrimary)] flex items-center gap-1;
+      }
+      .old-price {
+        @apply text-sm text-[#696969] flex items-center gap-1 line-through;
+      }
+    }
+  }
+  .addtocartbtn {
+    @apply w-full py-2  [color:var(--colorPrimary)] rounded-full bg-white border border-[#EA5B5B] mt-2.5 font-semibold;
+  }
+}
+.ServicesCard {
+  @apply flex text-white items-center justify-between bg-gradient-to-r from-[var(--color-gradient-start)] to-[var(--color-gradient-end)] rounded-[34px] overflow-hidden;
+  .service-info {
+    @apply px-7;
+    .service-title {
+      @apply text-lg font-bold mb-2.5;
+    }
+    .service-subtitle {
+      @apply mb-2.5;
+    }
+    .service-features {
+      @apply flex flex-col gap-2.5;
+      .icon-bg {
+        @apply h-7 w-7 rounded-full flex items-center justify-center bg-white;
+      }
+    }
+  }
+}
+
 header {
   .top-bar {
-    @apply py-2 [background:var(--colorSecondary)];
+    @apply py-2 [background:var(--colorSecondary)] max-sm:hidden;
 
     .topbar-inner {
       @apply flex items-center gap-3 justify-center;
@@ -70,7 +111,7 @@ header {
   .mid-bar {
     @apply py-5;
     .midbar-inner {
-      @apply flex justify-between items-center;
+      @apply flex justify-between items-center gap-5;
     }
     .inputContainer {
       @apply border border-[#ea5b5b] flex items-center p-[5px] pl-5 w-full max-w-[620px] rounded-full justify-between [background-color:var(--greyColor)];
@@ -92,9 +133,9 @@ header {
           }
         }
         .menu-name {
-          @apply flex items-center gap-3;
+          @apply flex items-center gap-3 max-lg:hidden;
           span {
-            @apply font-semibold;
+            @apply font-semibold whitespace-nowrap;
           }
         }
       }
@@ -109,7 +150,7 @@ header {
       .menu-item {
         @apply flex items-center gap-1.5 hover:text-[#EA5B5B];
         span {
-          @apply font-bold text-[#471267];
+          @apply font-bold text-[#471267] whitespace-nowrap;
         }
       }
     }
@@ -136,13 +177,12 @@ header {
 
 .popular-products {
   @apply py-10;
-  
 }
 
 .popular-categories {
   @apply py-10 relative bg-gradient-to-r from-[var(--color-gradient-start)] to-[var(--color-gradient-end)];
-  .bg-art{
-    @apply absolute right-0 bottom-0
+  .bg-art {
+    @apply absolute right-0 bottom-0;
   }
   .cards-container {
     @apply grid grid-cols-5 gap-5;
@@ -170,9 +210,36 @@ header {
   }
 }
 
-.season-saving{
+.season-saving {
   @apply py-10;
-  .cards-container{
-    @apply grid grid-cols-5 gap-5
+  .cards-container {
+    @apply grid grid-cols-5 gap-5;
+  }
+}
+.promo-slider {
+  @apply pt-5 pb-[60px];
+}
+.swiper-container {
+  @apply relative;
+}
+.Pet-brands {
+  @apply py-10 bg-[var(--lightOrangeColor)] border-t border-[var(--colorPrimary)];
+  .brand-inner-container {
+    @apply flex items-center justify-between;
+    .brands-logos-container {
+      @apply grid grid-cols-6 gap-3.5;
+      .logo-bg {
+        @apply px-5 py-3 bg-white rounded-lg flex items-center justify-center;
+        .logo {
+          @apply object-contain h-full max-h-[71px] w-fit;
+        }
+      }
+    }
+  }
+}
+.PetServices {
+  @apply py-10;
+  .Services-container {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-6;
   }
 }

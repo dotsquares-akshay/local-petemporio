@@ -1,6 +1,6 @@
 import React from "react";
-import SectionTitleCta from "../SectionTitleCta";
-import ProductCard from "../ProductCard";
+import SectionTitleCta from "../common/SectionTitleCta";
+import ProductCard from "../common/ProductCard";
 import prodImage1 from "@/assets/images/prod1.png";
 import ProductSlider from "./ProductSlider";
 

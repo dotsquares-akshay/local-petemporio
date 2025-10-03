@@ -3,6 +3,9 @@
 @import "swiper/css/navigation";
 @import "swiper/css/pagination";
 @import "../assets/css/main.scss";
+@import "../components/Home/banner/banner.scss";
+@import "../components/Home/camps/camps.scss";
+@import "../components/Home/strip/strip.scss";
 
 
 :root {
@@ -35,3 +38,4 @@ Common Utilities
 body {
   @apply m-0 p-0 box-border [font-family:var(--font-family)];
 }
+

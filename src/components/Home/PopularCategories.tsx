@@ -1,6 +1,6 @@
 import React from "react";
 import CategoryCard from "./CategoryCard";
-import SectionTitleCta from "../SectionTitleCta";
+import SectionTitleCta from "../common/SectionTitleCta";
 import categoryImg1 from "@/assets/images/category-img1.png";
 import sectionImage from "@/assets/images/dogs-outline.png";
 import Image from "next/image";

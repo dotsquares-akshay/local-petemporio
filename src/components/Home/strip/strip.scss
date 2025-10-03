@@ -1,0 +1,24 @@
+.strip{
+    @apply bg-gradient-to-r from-[var(--color-gradient-start)] to-[var(--color-gradient-end)];
+    .strip-content-container{
+       @apply flex justify-between items-center gap-5;
+       .strip-info{
+        @apply flex flex-col items-center gap-5;
+        .strip-title{
+            @apply text-[30px] font-bold text-white
+        }
+       }
+       .inner-container{
+        @apply flex
+       }
+       .text-container{
+        @apply flex text-white items-center gap-5;
+        .strip-step{
+            .number{
+                @apply font-bold
+            }
+            
+        }
+       }
+    }
+}

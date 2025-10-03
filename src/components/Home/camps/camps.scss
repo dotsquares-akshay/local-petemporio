@@ -1,0 +1,23 @@
+.camp-section{
+    @apply py-10;
+    .camps-container{
+      @apply  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5;
+      .camp-card{
+        @apply flex flex-col gap-3.5;
+        .image-container{
+            @apply h-full max-h-[280px] w-full max-w-[335px] object-cover;
+          img{
+            @apply h-full w-full object-cover rounded-2xl;
+          }
+          }
+          .camp-details{
+            .camp-title{
+              @apply font-bold text-lg;
+            }
+            .camp-date{
+              @apply text-sm text-[#666666] mb-1.5
+            }
+          }
+      }
+    }
+}

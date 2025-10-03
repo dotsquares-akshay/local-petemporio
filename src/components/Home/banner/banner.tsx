@@ -11,7 +11,7 @@ const images = [banner1, banner1, banner1];
 
 const ImageSwiper = () => {
   return (
-    <div className="w-full ">
+    <section className="banner">
       <Swiper
         modules={[ Autoplay]}
         spaceBetween={20}
@@ -32,7 +32,7 @@ const ImageSwiper = () => {
   </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </section>
   );
 };
 
