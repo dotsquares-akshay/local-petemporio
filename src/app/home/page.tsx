@@ -11,6 +11,7 @@ import PetBrands from "@/components/Home/PetBrands";
 import PetServices from "@/components/Home/PetServices";
 import Camps from "@/components/Home/camps/camps";
 import Strip from "@/components/Home/strip/Strip";
+import AppCta from "@/components/Home/App-cta/AppCta";
 
 function page() {
   return (
@@ -27,6 +28,7 @@ function page() {
       <PetServices />
       <Camps />
       <Strip />
+      <AppCta />
     </>
   );
 }

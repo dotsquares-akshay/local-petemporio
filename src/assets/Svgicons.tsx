@@ -777,7 +777,7 @@ export const ServiceFeatureVideoIcon = (
 );
 export const StripStep1Icon = (
   <svg width="57" height="61" viewBox="0 0 57 61" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M22.9843 57.816H3.04102V3.20923H49.5755V35.9733M34.064 51.2632L40.7118 57.816L54.0073 46.8946M16.3366 29.4205H36.2799M16.3366 42.5261H22.9843M16.3366 16.3148H36.2799" stroke="white" stroke-width="5.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22.9843 57.816H3.04102V3.20923H49.5755V35.9733M34.064 51.2632L40.7118 57.816L54.0073 46.8946M16.3366 29.4205H36.2799M16.3366 42.5261H22.9843M16.3366 16.3148H36.2799" stroke="white" strokeWidth="5.7" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
 
 ) 
