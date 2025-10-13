@@ -1,6 +1,6 @@
 import React from 'react';
-import SectionTitleCta from '../common/SectionTitleCta';
-import ServiceCard from '../common/ServicesCard';
+import SectionTitleCta from '../../common/SectionTitleCta';
+import ServiceCard from '../../common/ServicesCard';
 import serviceImg1 from '@/assets/images/Mask-image.png';
 import { ServiceFeatureVideoIcon} from '@/assets/Svgicons';
 
@@ -40,9 +40,9 @@ function PetServices() {
           title="Professional Pet Services"
           cta="View All"
           href="/services"
-          className="title-cta"
-          titleClassName="title"
-          ctaClassName="cta"
+          className="section-inline-title"
+          titleClassName=""
+          ctaClassName="button gradient-button"
         />
 
         <div className="Services-container">

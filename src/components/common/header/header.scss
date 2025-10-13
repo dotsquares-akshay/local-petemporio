@@ -1,0 +1,63 @@
+header {
+  .top-bar {
+    @apply py-2 [background:var(--colorSecondary)] max-sm:hidden;
+
+    .topbar-inner {
+      @apply flex items-center gap-3 justify-center;
+    }
+    p {
+      @apply text-center text-white text-sm font-medium;
+    }
+    .close-icon {
+      @apply h-[23px] w-[23px] bg-[#6D4685] flex items-center justify-center rounded-full;
+    }
+  }
+
+  .mid-bar {
+    @apply py-5;
+    .midbar-inner {
+      @apply flex justify-between items-center gap-5;
+    }
+    .inputContainer {
+      @apply border border-[var(--colorPrimary)] flex items-center p-[5px] pl-5 w-full max-w-[620px] rounded-full justify-between [background-color:var(--greyColor)];
+      input {
+        @apply w-full bg-transparent outline-none placeholder:text-sm placeholder:font-medium;
+      }
+      .Search-btn {
+        @apply p-[14px] rounded-full [background:var(--gradientColor)];
+      }
+    }
+    .header-options {
+      @apply flex items-center gap-5;
+      .menus {
+        @apply flex items-center gap-3;
+        .icon-bg {
+          @apply relative rounded-full h-[30px] w-[30px] flex items-center justify-center [background:var(--lightOrangeColor)];
+          .cart-indicator {
+            @apply text-xs text-white absolute h-4 w-4 text-center rounded-full top-[-5px] right-[-5px] [background:var(--gradientColor)];
+          }
+        }
+        .menu-name {
+          @apply flex items-center gap-3 max-lg:hidden;
+          span {
+            @apply font-semibold whitespace-nowrap hover:text-[var(--colorPrimary)] transition ;
+          }
+        }
+      }
+    }
+  }
+
+  .navbar {
+    @apply pb-[22px];
+    .nav-menu {
+      @apply flex items-center justify-center gap-[40px];
+
+      .menu-item {
+        @apply flex items-center gap-1.5;
+        span {
+          @apply font-bold text-[var(--colorSecondary)]  hover:text-[var(--colorPrimary)] transition duration-250 whitespace-nowrap;
+        }
+      }
+    }
+  }
+}

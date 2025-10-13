@@ -1,6 +1,6 @@
 import React from "react";
-import SectionTitleCta from "../common/SectionTitleCta";
-import BrandLogo from "../Home/Brandlogos";
+import SectionTitleCta from "../../common/SectionTitleCta";
+import BrandLogo from "../petbrands/Brandlogos";
 import brand1 from "@/assets/images/brand1.png";
 
 const brands = [
@@ -28,10 +28,10 @@ function PetBrands() {
             subtitle="Shop now from 500+ brands!"
             cta="View All"
             href="/brands"
-            className="title-cta-col"
+            className="space-y-2.5 w-2/10"
             titleClassName="title"
             subtitleClassName="subtitle"
-            ctaClassName="cta"
+            ctaClassName="button gradient-button"
           />
           <div className="brands-logos-container">
             {brands.map((brand, index) => (

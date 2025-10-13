@@ -3,9 +3,19 @@
 @import "swiper/css/navigation";
 @import "swiper/css/pagination";
 @import "../assets/css/main.scss";
+@import "../components/common/header/header.scss";
 @import "../components/Home/banner/banner.scss";
+@import "../components/Home/features/features.scss";
 @import "../components/Home/camps/camps.scss";
 @import "../components/Home/strip/strip.scss";
+@import "../components/Home/petbrands/petbrands.scss";
+@import "../components/Home/popular-categories/popular-categories.scss";
+@import "../components/Home/products/popprods.scss";
+@import "../components/Home/season-saving/season-saving.scss";
+@import "../components/Home/services/pet-services.scss";
+@import "../components/Home/App-cta/AppCta.scss";
+@import "../components/common/footer/footer.scss";
+@import "../components/Home/pet-Slider/petSlider.scss";
 
 
 :root {
@@ -17,6 +27,7 @@
   --lightPinkBg: rgba(234, 91, 91, 0.06);
   --font-Poppins: "Poppins", sans-serif;
   --greyColor: #f5f5f7;
+  --muted-text: #666666;
   --lightOrangeColor: #ffeeee;
 }
 
@@ -30,6 +41,7 @@
   --font-family: var(--font-Poppins);
   --greyColor: var(--greyColor);
   --lightOrangeColor: var(--lightOrangeColor);
+  --muted-text: var(--muted-text);
 }
 
 /* -----------------------
@@ -38,4 +50,3 @@ Common Utilities
 body {
   @apply m-0 p-0 box-border [font-family:var(--font-family)];
 }
-

@@ -1,6 +1,6 @@
 import React from "react";
-import SectionTitleCta from "../common/SectionTitleCta";
-import ProductCard from "../common/ProductCard";
+import SectionTitleCta from "../../common/SectionTitleCta";
+import ProductCard from "../../common/ProductCard";
 import prodImage1 from "@/assets/images/prod1.png";
 import ProductSlider from "./ProductSlider";
 
@@ -91,9 +91,9 @@ function PopularProducts() {
           title="Popular Products"
           cta="View All"
           href="/products"
-          className="title-cta"
-          titleClassName="title"
-          ctaClassName="cta"
+          className="section-inline-title"
+          titleClassName=""
+          ctaClassName="button gradient-button"
         />
         <ProductSlider products={homeProducts} />
       </div>

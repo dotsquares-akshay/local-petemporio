@@ -1,0 +1,33 @@
+.popular-categories {
+  @apply py-10 relative bg-gradient-to-r from-[var(--color-gradient-start)] to-[var(--color-gradient-end)];
+  .bg-art {
+    @apply absolute right-0 bottom-0;
+  }
+  .cards-container {
+    @apply grid grid-cols-5 gap-5;
+    .category-card {
+      @apply flex flex-col gap-3 p-[5px] bg-white rounded-2xl cursor-pointer;
+      .category-image-container {
+        @apply h-full max-h-[255px] w-full max-w-[255px] object-cover overflow-hidden rounded-2xl ;
+        .image{
+          @apply h-full w-full object-cover rounded-2xl hover:scale-105 transition
+        }
+      }
+      .category-info {
+        @apply px-[5px] pb-2.5;
+        .category-header {
+          @apply mb-1  flex items-center gap-2;
+          .category-icon {
+            @apply h-[30px] w-[30px] flex items-center justify-center rounded-full [background:var(--lightOrangeColor)];
+          }
+          .CategoryName {
+            @apply font-bold capitalize text-[var(--colorSecondary)];
+          }
+        }
+        .category-description {
+          @apply text-sm;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+.PetServices {
+  @apply py-10;
+  .Services-container {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-6;
+  }
+}

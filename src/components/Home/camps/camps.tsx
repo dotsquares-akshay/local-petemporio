@@ -34,9 +34,9 @@ const CampSection = () => {
           title="Book walkins for the camps"
           cta="View More"
           href="/services"
-          className="title-cta"
-          titleClassName="title"
-          ctaClassName="cta"
+          className="section-inline-title"
+          titleClassName=""
+          ctaClassName="button gradient-button"
         />
       <div className="camps-container">
         {campsData.map((camp, idx) => (

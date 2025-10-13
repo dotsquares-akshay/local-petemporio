@@ -27,7 +27,7 @@ const ImageSwiper = () => {
       alt={`Slide ${index + 1}`}
       width={800}
       height={400}
-      className="w-full h-[551px] object-cover"
+      className="w-full h-full"
     />
   </SwiperSlide>
         ))}

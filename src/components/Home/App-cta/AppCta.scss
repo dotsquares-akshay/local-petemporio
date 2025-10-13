@@ -1,0 +1,38 @@
+.App-cta {
+  @apply py-10 relative text-[var(--colorSecondary)] bg-[#F2EEF4] overflow-hidden;
+  .bg-art {
+    @apply absolute bottom-0 -right-9 h-full max-h-[470px] w-auto;
+  }
+  .cta-container {
+    @apply flex justify-between items-center;
+    .cta-information {
+      @apply flex flex-col gap-2.5; 
+      @apply w-1/2;
+      .top {
+        @apply w-fit;
+        .svg {
+          @apply mb-[22px];
+        }
+        .text {
+          @apply uppercase font-semibold text-xs;
+        }
+      }
+      .mid{
+        .title{
+          @apply  text-[38px] font-semibold
+        }
+        .sub-title{
+          @apply text-[28px] font-semibold
+        }
+      }
+      .bottom{
+        .description{
+          @apply leading-[30px]
+        }
+      }
+      .cta-btns{
+          @apply flex gap-2.5;
+        }
+    }
+  }
+}

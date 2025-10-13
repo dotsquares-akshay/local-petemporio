@@ -23,7 +23,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
         <Image
           src={image}
           alt={name}
-          className="h-full w-full object-cover rounded-2xl"
+          className="image"
         />
       </div>
       <div className="category-info">

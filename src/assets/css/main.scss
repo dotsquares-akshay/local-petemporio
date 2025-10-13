@@ -1,17 +1,41 @@
+h1,h2,h3,h4,h5,h6{
+  @apply font-semibold;
+}
+h1{
+  @apply text-[38px] ;
+}
+h2{
+  @apply text-3xl;
+}
+h3{
+  @apply text-[28px];
+}
+h4{
+  @apply text-[22px];
+}
+h5{
+  @apply text-xl;
+}
+h6{
+  @apply text-lg;
+}
+.button{
+  @apply px-5 py-2.5 rounded-full inline-flex justify-center gap-4 cursor-pointer;
+}
+.stroke-button{
+  @apply border border-[var(--colorPrimary)] bg-white text-[var(--colorPrimary)];
+}
+.gradient-button{
+  @apply bg-gradient-to-r from-[var(--color-gradient-start)] to-[var(--color-gradient-end)] text-white; 
+}
 .container {
   @apply max-w-[1432px] mx-auto px-4;
 }
-.title-cta {
+.section-inline-title{
   @apply flex items-center justify-between mb-5;
 
-  .title {
-    @apply text-[28px] font-semibold;
-  }
-  .title-white {
-    @apply text-[28px] font-semibold text-white;
-  }
-  .cta {
-    @apply py-2.5 px-5 [background:var(--gradientColor)] rounded-full text-white;
+  .cta:hover {
+    @apply transition [background:var(--colorPrimary)];
   }
   .cta-white {
     @apply py-2.5 px-5 bg-white rounded-full text-[var(--colorPrimary)] border border-[var(--colorPrimary)];
@@ -26,27 +50,16 @@
 .stroke-btn{
   @apply py-2.5  rounded-full text-[var(--colorPrimary)] border border-[var(--colorPrimary)] bg-white inline-block px-5 font-semibold text-center ;
 }
-.title-cta-col {
-  @apply flex flex-col gap-2.5 w-[20%];
-  .title {
-    @apply text-[28px] font-semibold;
-  }
-  .subtitle {
-    @apply text-[#424242] text-lg;
-  }
-  .cta {
-    @apply py-2.5 px-5 w-fit [background:var(--gradientColor)] rounded-full text-white inline-block;
-  }
-}
+
 .product-card {
   @apply [background-color:var(--greyColor)] rounded-2xl p-2.5 cursor-pointer;
   .product-image-container {
-    @apply w-full relative;
+    @apply w-full relative overflow-hidden rounded-2xl z-40;
     .product-heart {
-      @apply absolute top-3 right-3;
+      @apply absolute top-3 right-3 z-999; 
     }
     .product-image {
-      @apply object-cover rounded-xl h-full max-h-[255px];
+      @apply object-cover rounded-xl h-full max-h-[255px] hover:scale-103 transition;
     }
   }
   .product-rating-container {
@@ -61,7 +74,7 @@
       @apply text-sm;
     }
     .product-price {
-      @apply flex items-center gap-2 mt-[5px];
+      @apply flex items-center gap-2 mt-[5px] mb-2.5;
       .new-price {
         @apply font-semibold [color:var(--colorPrimary)] flex items-center gap-1;
       }
@@ -71,7 +84,7 @@
     }
   }
   .addtocartbtn {
-    @apply w-full py-2  [color:var(--colorPrimary)] rounded-full bg-white border border-[#EA5B5B] mt-2.5 font-semibold;
+    @apply w-full py-2  text-[var(--colorPrimary)] hover:text-white rounded-full bg-white hover:bg-[var(--colorPrimary)] transition duration-400 border border-[#EA5B5B] mt-2.5 font-semibold;
   }
 }
 .ServicesCard {
@@ -93,153 +106,20 @@
   }
 }
 
-header {
-  .top-bar {
-    @apply py-2 [background:var(--colorSecondary)] max-sm:hidden;
 
-    .topbar-inner {
-      @apply flex items-center gap-3 justify-center;
-    }
-    p {
-      @apply text-center text-white text-sm font-medium;
-    }
-    .close-icon {
-      @apply h-[23px] w-[23px] bg-[#6D4685] flex items-center justify-center rounded-full;
-    }
-  }
 
-  .mid-bar {
-    @apply py-5;
-    .midbar-inner {
-      @apply flex justify-between items-center gap-5;
-    }
-    .inputContainer {
-      @apply border border-[#ea5b5b] flex items-center p-[5px] pl-5 w-full max-w-[620px] rounded-full justify-between [background-color:var(--greyColor)];
-      input {
-        @apply w-full bg-transparent outline-none placeholder:text-sm placeholder:font-medium;
-      }
-      .Search-btn {
-        @apply p-[14px] rounded-full [background:var(--gradientColor)];
-      }
-    }
-    .header-options {
-      @apply flex items-center gap-5;
-      .menus {
-        @apply flex items-center gap-3;
-        .icon-bg {
-          @apply relative rounded-full h-[30px] w-[30px] flex items-center justify-center [background:var(--lightOrangeColor)];
-          .cart-indicator {
-            @apply text-xs text-white absolute h-4 w-4 text-center rounded-full top-[-5px] right-[-5px] [background:var(--gradientColor)];
-          }
-        }
-        .menu-name {
-          @apply flex items-center gap-3 max-lg:hidden;
-          span {
-            @apply font-semibold whitespace-nowrap;
-          }
-        }
-      }
-    }
-  }
 
-  .navbar {
-    @apply pb-[22px];
-    .nav-menu {
-      @apply flex items-center justify-center gap-[40px];
 
-      .menu-item {
-        @apply flex items-center gap-1.5 hover:text-[#EA5B5B];
-        span {
-          @apply font-bold text-[#471267] whitespace-nowrap;
-        }
-      }
-    }
-  }
-}
 
-.features {
-  @apply py-6 bg-[linear-gradient(90deg,rgba(255,255,255,0.1)_0%,rgba(234,91,91,0.1)_50%,rgba(255,255,255,0.1)_100%)];
-  .features-inner {
-    @apply flex justify-between items-center;
-    .feature-item {
-      @apply flex gap-[15px] max-w-[293px] items-center;
-      .feature-text {
-        .feature-name {
-          @apply text-lg font-semibold;
-        }
-        .feature-description {
-          @apply text-[#2F2D30];
-        }
-      }
-    }
-  }
-}
 
-.popular-products {
-  @apply py-10;
-}
 
-.popular-categories {
-  @apply py-10 relative bg-gradient-to-r from-[var(--color-gradient-start)] to-[var(--color-gradient-end)];
-  .bg-art {
-    @apply absolute right-0 bottom-0;
-  }
-  .cards-container {
-    @apply grid grid-cols-5 gap-5;
-    .category-card {
-      @apply flex flex-col gap-3 p-[5px] bg-white rounded-2xl cursor-pointer;
-      .category-image-container {
-        @apply h-full max-h-[255px] w-full max-w-[255px] object-cover;
-      }
-      .category-info {
-        @apply px-[5px] pb-2.5;
-        .category-header {
-          @apply mb-1  flex items-center gap-2;
-          .category-icon {
-            @apply h-[30px] w-[30px] flex items-center justify-center rounded-full [background:var(--lightOrangeColor)];
-          }
-          .CategoryName {
-            @apply font-bold capitalize text-[var(--colorSecondary)];
-          }
-        }
-        .category-description {
-          @apply text-sm;
-        }
-      }
-    }
-  }
-}
 
-.season-saving {
-  @apply py-10;
-  .cards-container {
-    @apply grid grid-cols-5 gap-5;
-  }
-}
+
 .promo-slider {
   @apply pt-5 pb-[60px];
 }
 .swiper-container {
   @apply relative;
 }
-.Pet-brands {
-  @apply py-10 bg-[var(--lightOrangeColor)] border-t border-[var(--colorPrimary)];
-  .brand-inner-container {
-    @apply flex items-center justify-between;
-    .brands-logos-container {
-      @apply grid grid-cols-6 gap-3.5;
-      .logo-bg {
-        @apply px-5 py-3 bg-white rounded-lg flex items-center justify-center;
-        .logo {
-          @apply object-contain h-full max-h-[71px] w-fit;
-        }
-      }
-    }
-  }
-}
-.PetServices {
-  @apply py-10;
-  .Services-container {
-    @apply grid grid-cols-1 lg:grid-cols-2 gap-6;
-  }
-}
+
+

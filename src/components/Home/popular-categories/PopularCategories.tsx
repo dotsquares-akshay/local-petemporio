@@ -1,6 +1,6 @@
 import React from "react";
 import CategoryCard from "./CategoryCard";
-import SectionTitleCta from "../common/SectionTitleCta";
+import SectionTitleCta from "../../common/SectionTitleCta";
 import categoryImg1 from "@/assets/images/category-img1.png";
 import sectionImage from "@/assets/images/dogs-outline.png";
 import Image from "next/image";
@@ -31,9 +31,9 @@ function PopularCategories() {
           title="Popular Categories"
           cta="View More"
           href="/products"
-          className="title-cta"
-          titleClassName="title-white"
-          ctaClassName="cta-white"
+          className="section-inline-title"
+          titleClassName="text-white"
+          ctaClassName="button stroke-button"
         />
         <div className="cards-container">
           {categories.map((cat, idx) => (

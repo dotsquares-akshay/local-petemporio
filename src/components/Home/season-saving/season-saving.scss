@@ -1,0 +1,6 @@
+.season-saving {
+  @apply py-10;
+  .cards-container {
+    @apply grid grid-cols-5 gap-5;
+  }
+}

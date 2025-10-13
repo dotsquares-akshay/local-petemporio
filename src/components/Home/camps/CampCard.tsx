@@ -24,7 +24,7 @@ const CampCard: React.FC<CampCardProps> = ({ image, title, date, description, bt
         <div className="camp-date">{date}</div>
         <div className="camp-description">{description}</div>
       </div>
-      <Link href={href} className="stroke-btn">
+      <Link href={href} className="button stroke-button w-full font-semibold">
         {btnText}
       </Link>
     </div>

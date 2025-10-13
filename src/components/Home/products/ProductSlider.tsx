@@ -6,7 +6,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { sliderleftArrow, sliderrightArrow } from "@/assets/Svgicons";
-import ProductCard from "../common/ProductCard";
+import ProductCard from "../../common/ProductCard";
 import { StaticImageData } from "next/image";
 
 interface Product {
@@ -21,7 +21,6 @@ interface Product {
 interface ProductSliderProps {
   products: Product[];
 }
-
 const ProductSlider: React.FC<ProductSliderProps> = ({ products }) => {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
@@ -29,16 +28,14 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ products }) => {
   return (
     <div className="relative w-full">
       <Swiper
-        modules={[Navigation]}
+        // modules={[Navigation]}
         slidesPerView={5}
         spaceBetween={20}
         centeredSlides={products.length === 1} // ✅ single slide center
         centeredSlidesBounds={true}
         loop={true}
-        navigation={{
-          prevEl: prevRef.current,
-          nextEl: nextRef.current,
-        }}
+        navigation={true}
+        modules={[Navigation]}
         // onBeforeInit={(swiper) => {
         //   if (swiper.params.navigation) {
         //     // @ts-ignore
@@ -61,7 +58,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ products }) => {
         ))}
       </Swiper>
 
-      <button
+      {/* <button
         ref={prevRef}
         className="absolute top-1/2 left-[-20px] z-999 bg-[#F6EBEB] w-10 h-10 flex items-center justify-center rounded-full"
       >
@@ -72,7 +69,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ products }) => {
         className="absolute top-1/2 right-[-20px] z-999 bg-[#F6EBEB] w-10 h-10 flex items-center justify-center rounded-full"
       >
         {sliderrightArrow}
-      </button>
+      </button> */}
     </div>
   );
 };

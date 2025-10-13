@@ -1,11 +1,12 @@
-import React from "react";
-import Image from "next/image";
-import { StaticImageData } from "next/image";
+"use client";
+import { useState } from "react";
+import Image, { StaticImageData } from "next/image";
+import { motion } from "framer-motion";
 import {
   productratingPaw,
   RuppeeIcon,
   fadedRupeeIcon,
-  ProductheartIcon,
+  ProductheartIcon, // your imported icon
 } from "@/assets/Svgicons";
 
 interface ProductCardProps {
@@ -13,49 +14,63 @@ interface ProductCardProps {
   title: string;
   price: string;
   oldPrice?: string;
-  rating?: number; // rating out of 5
+  rating?: number;
   className?: string;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({
+export default function ProductCard({
   image,
   title,
   price,
   oldPrice,
   rating,
   className,
-}) => {
+}: ProductCardProps) {
+  const [fav, setFav] = useState(false);
+
   return (
-    <div className={`${className}`}>
-      {/* Product Image */}
-      <div className="product-image-container">
-        <span className="product-heart">{ProductheartIcon}</span>
-        <Image src={image} alt={title} className="product-image" />
+    <div className={className}>
+      <div className="relative">
+        <motion.button
+          whileTap={{ scale: 0.9 }}
+          onClick={() => setFav((prev) => !prev)}
+          className="absolute top-3 right-3 z-10"
+        >
+          <motion.div
+            animate={{ scale: fav ? [1, 1.3, 1] : 1 }}
+            transition={{ duration: 0.25 }}
+          >
+            <ProductheartIcon fill={fav ? "#EF4444" : "#1D2B36"} />
+          </motion.div>
+        </motion.button>
+
+        <Image
+          src={image}
+          alt={title}
+          width={500}
+          height={500}
+          className="w-full object-cover rounded-xl"
+          priority
+        />
       </div>
 
-      {/* Product Info */}
-      <div className="product-info">
+      <div className="mt-3">
         {rating !== undefined && (
-          <div className="product-rating-container">
-            <div className="product-rating">
-              <span>{productratingPaw}</span>
-              <span>{rating.toFixed(1)}</span>
-            </div>
+          <div className="flex items-center gap-1 text-sm">
+            <span>{productratingPaw}</span>
+            <span>{rating.toFixed(1)}</span>
           </div>
         )}
-        <div className="product-title">{title}</div>
-        <div className="product-price">
-          <span className="new-price">
+        <div className="font-medium text-gray-800">{title}</div>
+        <div className="flex items-center gap-3">
+          <span className="flex items-center gap-1 font-semibold text-gray-900">
             <span>{RuppeeIcon}</span>
             <span>{price}</span>
           </span>
           {oldPrice && (
-            <div className="relative inline-block">
-              {/* Line above */}
+            <div className="relative inline-block text-gray-500">
               <span className="absolute top-1/2 left-0 w-full h-[2px] bg-gray-400"></span>
-
-              {/* Old Price with Icon */}
-              <div className="flex items-center gap-1 relative text-gray-500">
+              <div className="flex items-center gap-1 relative">
                 <span>{fadedRupeeIcon}</span>
                 <span>{oldPrice}</span>
               </div>
@@ -63,9 +78,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
           )}
         </div>
       </div>
-      <button className="addtocartbtn">Add to Cart</button>
+
+      <button className="button stroke-button w-full font-semibold mt-3">
+        Add to Cart
+      </button>
     </div>
   );
-};
-
-export default ProductCard;
+}

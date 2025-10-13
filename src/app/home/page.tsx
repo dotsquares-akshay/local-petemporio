@@ -1,17 +1,18 @@
-import Header from "@/components/common/Header";
+import Header from "@/components/common/header/Header";
 import React from "react";
 import Banner from "@/components/Home/banner/banner";
-import Features from "@/components/Home/features";
-import Popularproducts from "@/components/Home/Popularproducts";
-import PetCard from "@/components/Home/Petcard";
-import PopularCategories from "@/components/Home/PopularCategories";
-import SeasonSavings from "@/components/Home/SeasonSavings";
-import PromoSlider from "@/components/Home/PromoSlider";
-import PetBrands from "@/components/Home/PetBrands";
-import PetServices from "@/components/Home/PetServices";
+import Features from "@/components/Home/features/features";
+import Popularproducts from "@/components/Home/products/Popularproducts";
+import Mypetsslider from "@/components/Home/pet-Slider/Mypetsslider";
+import PopularCategories from "@/components/Home/popular-categories/PopularCategories";
+import SeasonSavings from "@/components/Home/season-saving/SeasonSavings";
+import PromoSlider from "@/components/Home/slider/PromoSlider";
+import PetBrands from "@/components/Home/petbrands/PetBrands";
+import PetServices from "@/components/Home/services/PetServices";
 import Camps from "@/components/Home/camps/camps";
 import Strip from "@/components/Home/strip/Strip";
 import AppCta from "@/components/Home/App-cta/AppCta";
+import Footer from "@/components/common/footer/Footer"
 
 function page() {
   return (
@@ -20,7 +21,7 @@ function page() {
       <Banner />
       <Features />
       <Popularproducts />
-      <PetCard />
+      <Mypetsslider />
       <PopularCategories />
       <SeasonSavings />
       <PromoSlider />
@@ -29,6 +30,7 @@ function page() {
       <Camps />
       <Strip />
       <AppCta />
+      <Footer />
     </>
   );
 }
