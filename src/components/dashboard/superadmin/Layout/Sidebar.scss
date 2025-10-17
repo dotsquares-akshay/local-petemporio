@@ -3,7 +3,7 @@
 }
 .menu-item{
     @apply relative flex items-center w-full gap-3 text-lg px-[15px] py-2.5 rounded-[5px]
-}
+} 
 .menu-item-active{
     @apply bg-gradient-to-r from-[var(--color-gradient-start)] to-[var(--color-gradient-end)] text-white
 }
