@@ -1,13 +1,14 @@
 .petcard-slider{
-    @apply py-10 bg-[linear-gradient(90deg,rgba(255,255,255,0.1)_0%,rgba(234,91,91,0.1)_50%,rgba(255,255,255,0.1)_100%)];
+    @apply py-10  bg-[linear-gradient(90deg,rgba(255,255,255,0.1)_0%,rgba(234,91,91,0.1)_50%,rgba(255,255,255,0.1)_100%)];
+    
+    }
     .petcard-container{
         @apply flex gap-5;
-        .petcard{
-        @apply flex flex-col text-center gap-5 w-fit mx-5;
-        .pet-name{
-            @apply text-lg font-extrabold uppercase text-[var(--colorPrimary)]
-        }
-    }
-    }
     
-}
+        
+    }
+    .pet-name{
+            @apply font-extrabold uppercase text-[var(--colorPrimary)]
+        }
+    .petcard{
+        @apply flex mt-5 flex-col text-center gap-5 w-fit;}

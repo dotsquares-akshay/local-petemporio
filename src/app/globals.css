@@ -18,6 +18,10 @@
 @import "../components/Home/pet-Slider/petSlider.scss";
 
 
+/* Dashboard css */
+@import "../components/dashboard/superadmin/Layout/Sidebar.scss";
+@import "../components/dashboard/superadmin/registration/login.scss";
+
 :root {
   --colorPrimary: #ea5b5b;
   --colorSecondary: #471267;

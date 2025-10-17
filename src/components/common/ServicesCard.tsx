@@ -21,7 +21,7 @@ interface ServiceCardProps {
 const ServiceCard: React.FC<ServiceCardProps> = ({ image, title, subtitle, features,href, cta }) => {
   return (
     <div className="ServicesCard">
-      <div className="service-img">
+      <div className="shapeBanner">
         <Image src={image} alt={title} />
       </div>
       <div className="service-info">

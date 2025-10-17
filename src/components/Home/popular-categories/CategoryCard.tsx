@@ -29,7 +29,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
       <div className="category-info">
         <div className="category-header">
           <div className="category-icon">{icon}</div>
-          <h4 className="CategoryName">{name}</h4>
+          <div className="CategoryName">{name}</div>
         </div>
         <p className="category-description">{description}</p>
       </div>

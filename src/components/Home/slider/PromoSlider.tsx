@@ -9,18 +9,15 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import slide1 from "@/assets/images/mid-banner.jpg";
-import { sliderleftArrow, sliderrightArrow } from "@/assets/Svgicons";
 
 export default function PromoSlider() {
   const slides = [slide1, slide1, slide1, slide1, slide1];
 
-  const prevRef = useRef<HTMLButtonElement>(null);
-  const nextRef = useRef<HTMLButtonElement>(null);
 
   const [swiperReady, setSwiperReady] = useState(false);
 
   useEffect(() => {
-    setSwiperReady(true); // Trigger Swiper after first render
+    setSwiperReady(true); 
   }, []);
 
   return (
@@ -33,10 +30,7 @@ export default function PromoSlider() {
             slidesPerView={1}
             spaceBetween={30}
             loop={true}
-            navigation={{
-              prevEl: prevRef.current,
-              nextEl: nextRef.current,
-            }}
+            navigation={true}
             className="rounded-lg overflow-hidden"
           >
             {slides.map((img, index) => (
@@ -53,20 +47,6 @@ export default function PromoSlider() {
             ))}
           </Swiper>
         )}
-
-        {/* Custom Navigation Buttons */}
-        <button
-          ref={prevRef}
-          className="absolute top-1/2 left-2 md:left-[-20px] z-50 bg-[#F6EBEB] w-10 h-10 flex items-center justify-center rounded-full -translate-y-1/2"
-        >
-          {sliderleftArrow}
-        </button>
-        <button
-          ref={nextRef}
-          className="absolute top-1/2 right-2 md:right-[-20px] z-50 bg-[#F6EBEB] w-10 h-10 flex items-center justify-center rounded-full -translate-y-1/2"
-        >
-          {sliderrightArrow}
-        </button>
         </div>
 
         

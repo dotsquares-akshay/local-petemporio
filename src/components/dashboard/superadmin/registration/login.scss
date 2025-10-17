@@ -1,0 +1,12 @@
+.login-screen{
+    @apply h-screen w-screen;
+    .page-inner{
+        @apply flex gap-5;
+    }
+    .image-container{
+        @apply  max-h-[816px] w-full max-w-[690px];
+        img{
+            @apply h-full w-auto max-h-[816px];
+        }
+    }
+}

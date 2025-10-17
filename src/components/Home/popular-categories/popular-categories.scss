@@ -21,7 +21,7 @@
             @apply h-[30px] w-[30px] flex items-center justify-center rounded-full [background:var(--lightOrangeColor)];
           }
           .CategoryName {
-            @apply font-bold capitalize text-[var(--colorSecondary)];
+            @apply font-bold uppercase text-[var(--colorSecondary)];
           }
         }
         .category-description {
