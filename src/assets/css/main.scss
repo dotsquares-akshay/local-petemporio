@@ -1,3 +1,4 @@
+
 h1,
 h2,
 h3,
@@ -27,8 +28,11 @@ h6 {
 .button {
   @apply px-5 py-2.5 rounded-full inline-flex justify-center gap-4 cursor-pointer;
 }
+.primary-button{
+  @apply bg-[var(--colorPrimary)] border border-[var(--colorPrimary)] text-white hover:bg-white hover:text-[var(--colorPrimary)] duration-300;
+}
 .stroke-button {
-  @apply border border-[var(--colorPrimary)] bg-white text-[var(--colorPrimary)];
+  @apply border border-[var(--colorPrimary)] hover:bg-[var(--colorPrimary)] hover:text-white duration-300 bg-white text-[var(--colorPrimary)];
 }
 .gradient-button {
   @apply bg-gradient-to-r from-[var(--color-gradient-start)] to-[var(--color-gradient-end)] text-white;
@@ -87,14 +91,6 @@ h6 {
     @apply bg-[var(--colorSecondary)];
   }
 }
-
-.Primary-btn {
-  @apply px-5 py-2.5 mt-3.5 rounded-full text-white [background:var(--colorPrimary)] inline-block;
-}
-.stroke-btn {
-  @apply py-2.5  rounded-full text-[var(--colorPrimary)] border border-[var(--colorPrimary)] bg-white inline-block px-5 font-semibold text-center;
-}
-
 .product-card {
   @apply [background-color:var(--greyColor)] rounded-2xl p-2.5 cursor-pointer;
   .product-image-container {
@@ -133,6 +129,11 @@ h6 {
 }
 .ServicesCard {
   @apply flex text-white items-center justify-between bg-gradient-to-r from-[var(--color-gradient-start)] to-[var(--color-gradient-end)] rounded-[34px] overflow-hidden;
+  .shapeBanner {
+  @apply h-full;
+   
+}
+
   .service-info {
     @apply px-7;
     .service-title {
@@ -157,9 +158,6 @@ h6 {
   @apply relative;
 }
 
-.shapeBanner {
-  @apply [clip-path:polygon(93.665%_18.046%,94.12%_15.719%,94.367%_13.29%,94.418%_10.842%,94.289%_8.455%,93.994%_6.212%,93.546%_4.193%,92.961%_2.481%,92.251%_1.157%,91.433%_0.303%,90.518%_0%,3.898%_0%,3.265%_0.149%,2.666%_0.579%,2.106%_1.267%,1.596%_2.189%,1.142%_3.324%,0.752%_4.646%,0.435%_6.133%,0.199%_7.761%,0.051%_9.507%,0%_11.348%,0%_88.652%,0.051%_90.493%,0.199%_92.239%,0.435%_93.867%,0.752%_95.354%,1.142%_96.676%,1.596%_97.811%,2.106%_98.733%,2.666%_99.421%,3.265%_99.851%,3.898%_100%,96.021%_100%,96.951%_99.688%,97.78%_98.808%,98.495%_97.447%,99.082%_95.69%,99.525%_93.624%,99.811%_91.334%,99.925%_88.907%,99.853%_86.428%,99.579%_83.984%,99.091%_81.66%,89.844%_47.249%,89.553%_46.004%,89.325%_44.682%,89.159%_43.302%,89.057%_41.882%,89.017%_40.441%,89.04%_38.996%,89.127%_37.567%,89.277%_36.172%,89.491%_34.829%,89.768%_33.558%,93.665%_18.046%)]
-}
 
 
 

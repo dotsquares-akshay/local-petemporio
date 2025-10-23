@@ -87,7 +87,7 @@ function PetServices() {
         >
           {chunkedServices.map((servicesChunk, index) => (
             <SwiperSlide key={index}>
-              <div className="flex justify-between">
+              <div className="flex justify-between flex-wrap">
                 {servicesChunk.map((service, idx) => (
                   <div key={idx} className="flex-1 first:mr-2 last:ml-2">
                     <ServiceCard

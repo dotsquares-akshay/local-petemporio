@@ -1,14 +1,30 @@
 .popular-categories {
   @apply py-10 relative bg-gradient-to-r from-[var(--color-gradient-start)] to-[var(--color-gradient-end)];
   .bg-art {
-    @apply absolute right-0 bottom-0;
+    @apply absolute max-w-full  right-0 bottom-0;
   }
   .cards-container {
-    @apply grid grid-cols-5 gap-5;
+    @apply grid grid-cols-1 gap-5;
+  }
+  @media (min-width: 480px) {
+    .cards-container {
+      @apply grid-cols-2;
+    }
+  }
+  @media (min-width: 768px) {
+    .cards-container {
+      @apply grid-cols-3;
+    }
+  }
+  @media (min-width: 1024px) {
+    .cards-container {
+      @apply grid-cols-5;
+    }
+  }
     .category-card {
       @apply flex flex-col gap-3 p-[5px] bg-white rounded-2xl cursor-pointer;
       .category-image-container {
-        @apply h-full max-h-[255px] w-full max-w-[255px] object-cover overflow-hidden rounded-2xl ;
+        @apply h-full max-h-[255px] w-full object-cover overflow-hidden rounded-2xl ;
         .image{
           @apply h-full w-full object-cover rounded-2xl hover:scale-105 transition
         }
@@ -30,4 +46,3 @@
       }
     }
   }
-}

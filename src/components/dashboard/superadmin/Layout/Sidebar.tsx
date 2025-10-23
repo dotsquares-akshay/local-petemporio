@@ -30,34 +30,48 @@ const navItems: NavItem[] = [
   },
   {
     icon: CtaPawIcon,
-    name: "UI Elements",
-    subItems: [
-      { name: "Buttons", path: "/buttons" },
-      { name: "Alerts", path: "/alerts" },
-    ],
+    name: "User Management",
+path: "/Dashboard",
   },
   {
     icon: CtaPawIcon,
-    name: "User Management",
-    subItems: [
-      {
-        name: "All Users",
-        path: "/users",
-        children: [
-          { name: "Active Users", path: "/users/active" },
-          { name: "Blocked Users", path: "/users/blocked" },
-        ],
-      },
-      {
-        name: "Roles",
-        path: "/roles",
-        children: [
-          { name: "Admin Roles", path: "/roles/admin" },
-          { name: "User Roles", path: "/roles/user" },
-        ],
-      },
-    ],
+    name: "Configuration",
+    subItems:[
+      { name: "Categories", path: "categories" },
+      { name: "Attributes", path: "attributes" },
+    ]
   },
+  {
+    icon: CtaPawIcon,
+    name: "Products",
+    subItems:[
+      { name: "Manage Products", path: "categories" },
+      { name: "Add Product", path: "attributes" },
+      { name: "Bulk Import", path: "attributes" },
+    ]
+  },
+  // {
+  //   icon: CtaPawIcon,
+  //   name: "User Management",
+  //   subItems: [
+  //     {
+  //       name: "All Users",
+  //       path: "/users",
+  //       children: [
+  //         { name: "Active Users", path: "/users/active" },
+  //         { name: "Blocked Users", path: "/users/blocked" },
+  //       ],
+  //     },
+  //     {
+  //       name: "Roles",
+  //       path: "/roles",
+  //       children: [
+  //         { name: "Admin Roles", path: "/roles/admin" },
+  //         { name: "User Roles", path: "/roles/user" },
+  //       ],
+  //     },
+  //   ],
+  // },
 ];
 
 const AppSidebar: React.FC = () => {
@@ -68,8 +82,20 @@ const AppSidebar: React.FC = () => {
   const [selectedKey, setSelectedKey] = useState<string>("main-Dashboard");
 
   const toggleKey = (key: string) => {
-    setOpenKeys((prev) => ({ ...prev, [key]: !prev[key] }));
-  };
+  setOpenKeys((prev) => {
+    const isAlreadyOpen = !!prev[key];
+
+    // Close all other dropdowns
+    const newState: Record<string, boolean> = {};
+
+    // If user clicks on an already-open menu, close it.
+    if (!isAlreadyOpen) {
+      newState[key] = true;
+    }
+
+    return newState;
+  });
+};
 
   const handleSelect = (key: string) => {
     setSelectedKey(key);
@@ -92,9 +118,16 @@ const AppSidebar: React.FC = () => {
       if (selectedKey === key) return true;
       if ("path" in item && item.path === pathname) return true;
       if ("subItems" in item)
-        return item.subItems?.some((sub) => isActive(sub, `${key}-${sub.name}`)) ?? false;
+        return (
+          item.subItems?.some((sub) => isActive(sub, `${key}-${sub.name}`)) ??
+          false
+        );
       if ("children" in item)
-        return item.children?.some((child) => isActive(child, `${key}-${child.name}`)) ?? false;
+        return (
+          item.children?.some((child) =>
+            isActive(child, `${key}-${child.name}`)
+          ) ?? false
+        );
       return false;
     },
     [pathname, selectedKey]
@@ -114,7 +147,9 @@ const AppSidebar: React.FC = () => {
               hasChildren ? toggleKey(key) : handleSelect(key);
             }}
             className={`w-full flex items-center justify-between text-left py-1 px-2 rounded transition-colors duration-300 ${
-              active ? "bg-orange-100 dark:bg-orange-600" : "hover:bg-gray-100 dark:hover:bg-gray-800"
+              active
+                ? "text-orange-700"
+                : "hover:text-[var(--colorPrimary)]"
             } text-gray-700`}
           >
             <span>{subItem.name}</span>
@@ -129,11 +164,13 @@ const AppSidebar: React.FC = () => {
 
           {hasChildren && (
             <div
-              className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ml-5 ${
+              className={`overflow-hidden transition-[max-height] duration-300 ease-in-out mt-3 ml-5 ${
                 isOpen ? "max-h-96" : "max-h-0"
               }`}
             >
-              <ul className="space-y-1">{renderSubItems(subItem.children!, key)}</ul>
+              <ul className="space-y-1">
+                {renderSubItems(subItem.children!, key)}
+              </ul>
             </div>
           )}
         </li>
@@ -155,7 +192,9 @@ const AppSidebar: React.FC = () => {
               <button
                 onClick={() => toggleKey(key)}
                 className={`w-full flex items-center justify-between py-2 px-3 rounded transition-colors duration-300 ${
-                  active ? "bg-orange-100 dark:bg-orange-600" : "hover:bg-gray-100 dark:hover:bg-gray-800"
+                  active
+                    ? "bg-gradient-to-r from-[var(--color-gradient-start)] to-[var(--color-gradient-end)] text-white"
+                    : "hover:bg-gradient-to-r from-[var(--color-gradient-start)] to-[var(--color-gradient-end)] hover:text-white "
                 } text-gray-700`}
               >
                 <span
@@ -174,10 +213,12 @@ const AppSidebar: React.FC = () => {
 
               <div
                 className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ml-5 ${
-                  isOpen ? "max-h-96" : "max-h-0"
+                  isOpen ? "max-h-96 mt-2" : "max-h-0"
                 }`}
               >
-                <ul className="space-y-1">{renderSubItems(item.subItems!, key)}</ul>
+                <ul className="space-y-1">
+                  {renderSubItems(item.subItems!, key)}
+                </ul>
               </div>
             </>
           ) : (
@@ -185,7 +226,9 @@ const AppSidebar: React.FC = () => {
               href={item.path!}
               onClick={() => handleSelect(key)}
               className={`flex items-center gap-2 py-2 px-3 rounded transition-colors duration-300 ${
-                active ? "bg-orange-100 dark:bg-orange-600" : "hover:bg-gray-100 dark:hover:bg-gray-800"
+                active
+                  ? "bg-gradient-to-r from-[var(--color-gradient-start)] to-[var(--color-gradient-end)] text-white"
+                  : "hover:bg-gradient-to-r from-[var(--color-gradient-start)] to-[var(--color-gradient-end)] hover:text-white"
               } text-gray-700`}
             >
               {item.icon}
@@ -206,13 +249,15 @@ const AppSidebar: React.FC = () => {
 
   return (
     <aside
-      className={`fixed mt-16 flex flex-col lg:mt-0 top-0 px-5 left-0 bg-white dark:bg-gray-900 dark:border-gray-800 text-gray-900 h-screen transition-all duration-300 ease-in-out z-50 border-r border-gray-200 ${
+      className={`fixed mt-16 flex flex-col lg:mt-0 top-0 px-5 text-lg left-0 bg-white dark:bg-gray-900 dark:border-gray-800 text-gray-900 h-screen transition-all duration-300 ease-in-out z-50 border-r border-gray-200 ${
         isExpanded || isMobileOpen
           ? "w-[364px]"
           : isHovered
           ? "w-[364px]"
           : "w-[90px]"
-      } ${isMobileOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}
+      } ${
+        isMobileOpen ? "translate-x-0" : "-translate-x-full"
+      } lg:translate-x-0`}
       onMouseEnter={() => !isExpanded && setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

@@ -103,7 +103,7 @@ const AppHeader: React.FC = () => {
           </button>
 
           <div className="hidden lg:block">
-            <div className="text-2xl md:text-sm font-bold">
+            <div className="text-2xl font-bold">
                 Dashboard
             </div>
           </div>

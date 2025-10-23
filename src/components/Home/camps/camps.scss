@@ -5,7 +5,7 @@
       .camp-card{
         @apply flex flex-col gap-3.5;
         .image-container{
-            @apply h-full max-h-[280px] w-full max-w-[335px] object-cover;
+            @apply h-full  object-cover;
           img{
             @apply h-full w-full object-cover rounded-2xl;
           }

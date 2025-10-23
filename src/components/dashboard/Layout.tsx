@@ -25,11 +25,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <div
         className={`flex-1 transition-all duration-300 ease-in-out ${mainContentMargin}`}
       >
-        {/* Header */}
+
         <AppHeader />
-        
-        {/* Page Content */}
-        <div className="p-4 max-w-screen-xl md:p-6">
+
+        <div className="p-4 w-full bg-[#F9FAFB] md:p-6">
           {children}
         </div>
       </div>

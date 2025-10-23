@@ -1,9 +1,12 @@
 footer {
   @apply py-10 bg-[var(--colorSecondary)] text-white;
   .footer-inner {
-    @apply flex justify-between gap-[130px];
+    @apply flex justify-between gap-8 flex-wrap;
     #about-us{
-        @apply flex-1
+        @apply flex-1 max-w-[270px]
+      }
+      #newsletter{
+        @apply max-w-[450px]
       }
     .menus {
         @apply flex flex-col gap-[18px];

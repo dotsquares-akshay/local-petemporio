@@ -1,7 +1,7 @@
 .strip{
     @apply bg-gradient-to-r from-[var(--color-gradient-start)] to-[var(--color-gradient-end)];
     .strip-content-container{
-       @apply flex justify-between items-center gap-5;
+       @apply flex justify-between items-center gap-5 xl:flex-row flex-col;
        .strip-info{
         @apply flex flex-col items-center gap-5;
         .strip-title{
@@ -9,7 +9,7 @@
         }
        }
        .inner-container{
-        @apply flex
+        @apply flex gap-5
        }
        .text-container{
         @apply flex text-white items-center gap-5;

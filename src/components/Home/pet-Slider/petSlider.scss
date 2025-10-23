@@ -1,14 +1,39 @@
-.petcard-slider{
-    @apply py-10  bg-[linear-gradient(90deg,rgba(255,255,255,0.1)_0%,rgba(234,91,91,0.1)_50%,rgba(255,255,255,0.1)_100%)];
-    
-    }
-    .petcard-container{
-        @apply flex gap-5;
-    
-        
-    }
-    .pet-name{
-            @apply font-extrabold uppercase text-[var(--colorPrimary)]
-        }
-    .petcard{
-        @apply flex mt-5 flex-col text-center gap-5 w-fit;}
+.petcard {
+  @apply flex mx-auto mt-5 flex-col text-center gap-5 w-fit;
+}
+.Circle1 {
+  @apply h-[190px] w-[190px] rounded-full z-[9] bg-[var(--colorPrimary)] relative;
+}
+.gradinet-circle1 {
+  @apply bg-[linear-gradient(180deg,rgba(234,91,91,0.6)_0%,rgba(255,227,200,0.6)_100%)] z-[999] h-[30px] w-[30px] rounded-full absolute left-[-20px] top-[53%];
+}
+.gradinet-circle2 {
+  @apply bg-[linear-gradient(180deg,rgba(234,91,91,0.6)_0%,rgba(255,227,200,0.6)_100%)] z-[999] h-[18px] w-[18px] rounded-full absolute left-[5px] top-[15%];
+}
+.gradinet-circle3 {
+  @apply bg-[linear-gradient(180deg,rgba(234,91,91,0.6)_0%,rgba(255,227,200,0.6)_100%)] z-[999] h-[14px] w-[14px] rounded-full absolute -right-[8%] top-[30%];
+}
+.petcard-slider {
+  @apply py-10  bg-[linear-gradient(90deg,rgba(255,255,255,0.1)_0%,rgba(234,91,91,0.1)_50%,rgba(255,255,255,0.1)_100%)];
+}
+.petcard-container {
+  @apply flex gap-5;
+}
+.pet-image{
+  @apply  w-fit h-full max-h-[230px] m-auto scale-110
+}
+.pet-name {
+  @apply font-extrabold uppercase text-[var(--colorPrimary)];
+}
+
+.petcard:hover {
+  .Circle1 {
+    @apply bg-[var(--colorSecondary)] duration-600;
+  }
+  .gradinet-circle1{
+    @apply bg-[var(--colorSecondary)] scale-97 top-[54%] duration-300;
+  }
+  .pet-image{
+    @apply -translate-x-1 -translate-y-1 duration-200
+  }
+}

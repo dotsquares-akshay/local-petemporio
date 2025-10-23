@@ -28,6 +28,7 @@
   --color-gradient-start: #6d3378;
   --color-gradient-end: #ca5062;
   --gradientColor: linear-gradient(90deg, #6d3378 0%, #ca5062 100%);
+  --pink-gradient: linear-gradient(180deg,rgba(234,91,91,0.6)0%,rgba(255,227,200,0.6)100%);
   --lightPinkBg: rgba(234, 91, 91, 0.06);
   --font-Poppins: "Poppins", sans-serif;
   --greyColor: #f5f5f7;
@@ -46,6 +47,7 @@
   --greyColor: var(--greyColor);
   --lightOrangeColor: var(--lightOrangeColor);
   --muted-text: var(--muted-text);
+  --pink-gradient: var(--pink-gradient);
 }
 
 /* -----------------------

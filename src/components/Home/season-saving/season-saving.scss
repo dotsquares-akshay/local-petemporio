@@ -1,6 +1,21 @@
 .season-saving {
   @apply py-10;
   .cards-container {
-    @apply grid grid-cols-5 gap-5;
+    @apply grid grid-cols-1  gap-5;
+  }
+    @media (min-width: 480px) {
+    .cards-container {
+      @apply grid-cols-2;
+    }
+  }
+  @media (min-width: 768px) {
+    .cards-container {
+      @apply grid-cols-3;
+    }
+  }
+  @media (min-width: 1024px) {
+    .cards-container {
+      @apply grid-cols-5;
+    }
   }
 }

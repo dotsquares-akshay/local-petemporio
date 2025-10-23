@@ -12,12 +12,14 @@ import PetServices from "@/components/Home/services/PetServices";
 import Camps from "@/components/Home/camps/camps";
 import Strip from "@/components/Home/strip/Strip";
 import AppCta from "@/components/Home/App-cta/AppCta";
-import Footer from "@/components/common/footer/Footer"
+import Footer from "@/components/common/footer/Footer";
+
 
 function page() {
   return (
     <>
       <Header />
+   
       <Banner />
       <Features />
       <Popularproducts />

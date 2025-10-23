@@ -43,10 +43,10 @@ function Mypetsslider() {
           modules={[Navigation, Scrollbar]}
           className="mySwiper"
           breakpoints={{
-            320: { slidesPerView: 1.5 },   // small mobile
-            480: { slidesPerView: 2.5 },   // larger mobile
-            640: { slidesPerView: 3.5 },   // tablets
-            768: { slidesPerView: 4.5 },   // small laptop
+            320: { slidesPerView: 1 },   // small mobile
+            480: { slidesPerView: 2 },   // larger mobile
+            640: { slidesPerView: 3 },   // tablets
+            768: { slidesPerView: 4 },   // small laptop
             1024: { slidesPerView: 5.5 },  // desktop (your target)
             1280: { slidesPerView: 5.5 },  // large screens
           }}
