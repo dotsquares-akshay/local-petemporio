@@ -26,12 +26,12 @@ const navItems: NavItem[] = [
   {
     icon: CtaPawIcon,
     name: "Dashboard",
-    path: "/Dashboard",
+    path: "/super-admin",
   },
   {
     icon: CtaPawIcon,
     name: "User Management",
-path: "/Dashboard",
+path: "/super-admin/users",
   },
   {
     icon: CtaPawIcon,
